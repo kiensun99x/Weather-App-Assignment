@@ -1,4 +1,4 @@
-export default function CurWeather({curWeatherData}){
+export default function CurWeather({WeatherData}){
     const defaultData = {
         location: { name: "--", country: "" },
         current: {
@@ -13,8 +13,8 @@ export default function CurWeather({curWeatherData}){
         },
       };
     
-    const location = curWeatherData?.location || defaultData.location;
-    const currentData = curWeatherData?.current || defaultData.current;
+    const location = WeatherData?.location || defaultData.location;
+    const currentData = WeatherData?.current || defaultData.current;
     
     return(
         <div className="bg-[url('./assets/clear.png')] pt-26 pb-10 w-100% bg-cover bg-center">

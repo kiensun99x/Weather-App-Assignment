@@ -7,19 +7,19 @@ import fetchCurWeather from "./services/fetchCurWeather.jsx";
 
 function App() {
   const [city, setCity] = useState('Ha Noi');
-  const [curWeatherData, setCurWeatherData] = useState(null);
+  const [WeatherData, setWeatherData] = useState(null);
  
   useEffect(() => {
     fetchCurWeather(city).then((data) => {
-      if (data) setCurWeatherData(data);
+      if (data) setWeatherData(data);
     });
   }, [city]);
   
   return (
     <>
       <Header setCity={setCity} />
-      <CurWeather curWeatherData={curWeatherData}/>
-      <Body curWeatherData={curWeatherData}/>
+      <CurWeather WeatherData={WeatherData}/>
+      <Body WeatherData={WeatherData}/>
 
 
     </>
