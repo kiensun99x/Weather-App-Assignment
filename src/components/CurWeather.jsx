@@ -1,0 +1,43 @@
+export default function CurWeather({curWeatherData}){
+    const defaultData = {
+        location: { name: "--", country: "" },
+        current: {
+          temp_c: "--",
+          feelslike_c: "--",
+          humidity: "--",
+          cloud:"--",
+          wind_kph: "--",
+          vis_km: "--",
+          uv: "--",
+          condition: { text: "", icon: "" },
+        },
+      };
+    
+    const location = curWeatherData?.location || defaultData.location;
+    const currentData = curWeatherData?.current || defaultData.current;
+    
+    return(
+        <div className="bg-[url('./assets/clear.png')] pt-26 pb-10 w-100% bg-cover bg-center">
+            <div className="max-w-2xl min-h-100 mx-10 md:mx-auto bg-black/20 rounded-2xl">
+                <div className="flex flex-col sm:flex-row  opacity-100 text-white">
+                    <div className="p-8 flex-1  flex flex-col justify-center items-center gap-1 text-center">
+                        <h1 className="text-5xl sm:text-6xl ">{location.name}</h1>
+                        <h1 className="text-lg sm:text-xl mb-8">{location.country}</h1>
+                        <img className="size-20" src={currentData.condition.icon} alt="" />
+                        {/* <h1 className="text-4xl">☁</h1> */}
+                        <h3 className="text-lg sm:text-xl">{currentData.condition.text}</h3>
+                        <h1 className="text-5xl sm:text-6xl">{currentData.temp_c}°C</h1>
+                    </div>
+                    <div className="p-8 pt-0 sm:p-8 flex-1 min-h-100 flex flex-col justify-around sm:text-lg">
+                        <li className="flex justify-between"><i>Cảm giác như:</i><i>{currentData.feelslike_c}°C</i></li>
+                        <li className="flex justify-between"><i>Độ ẩm:</i><i>{currentData.humidity}%</i></li>
+                        <li className="flex justify-between"><i>Mây che phủ:</i><i>{currentData.cloud}%</i></li>
+                        <li className="flex justify-between"><i>Tốc độ gió:</i><i>{currentData.wind_kph}km/h</i></li>
+                        <li className="flex justify-between"><i>Tầm nhìn:</i><i>{currentData.vis_km}km</i></li>
+                        <li className="flex justify-between"><i>Chỉ số UV:</i><i>{currentData.uv}</i></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
