@@ -3,6 +3,7 @@ import HourlyDetail from "./details/HourlyDetail";
 import DetailSection from "./details/DetailSection";
 import LineChart from "./details/LineChart";
 import BarChart from "./details/BarChart";
+import SunStatus from "./details/SunStatus";
 
 export default function Body({WeatherData}) {
   const todayData = WeatherData?.forecast.forecastday[0];
@@ -25,7 +26,9 @@ export default function Body({WeatherData}) {
           </DetailSection>
         </div>
         <div className="min-w-80  ">
-          <DetailSection />
+          <DetailSection title={'Bình minh/Hoàng hôn'}>
+            <SunStatus data={todayData}/>
+          </DetailSection>
           <DetailSection />
         </div>
       </div>
