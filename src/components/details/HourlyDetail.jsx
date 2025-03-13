@@ -5,14 +5,15 @@ import filterFutureHours from "../../utils/filterFutureHours";
 
 export default function HourlyDetail({todayData}) {
   const defaultData = [
-    { time: '12', temp_c: "--", condition: {icon: ''}, humidity: "" },
-    { time: '13', temp_c: "--", condition: {icon: ''}, humidity: "" },
-    { time: '14',  temp_c: "--", condition: {icon: ''},  humidity: ""},
-    { time: '15', temp_c: "--",  condition: {icon: ''},humidity: ""},
-    {time: '16', temp_c: "--",   condition: {icon: ''},   humidity: "" }
+    { time: '', temp_c: "--", condition: {icon: ''}, humidity: "" },
+    { time: '', temp_c: "--", condition: {icon: ''}, humidity: "" },
+    { time: '',  temp_c: "--", condition: {icon: ''},  humidity: ""},
+    { time: '', temp_c: "--",  condition: {icon: ''},humidity: ""},
+    {time: '', temp_c: "--",   condition: {icon: ''},   humidity: "" }
   ];
     let filteredTodayData 
     if (todayData) {
+      
       filteredTodayData= filterFutureHours(todayData.hour)
     }
     

@@ -11,7 +11,9 @@ function App() {
  
   useEffect(() => {
     fetchCurWeather(city).then((data) => {
-      if (data) setWeatherData(data);
+      if (data) 
+        if(!data.error)
+        setWeatherData(data);
     });
   }, [city]);
   
