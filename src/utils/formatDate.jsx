@@ -18,4 +18,10 @@ function getDateFromString(stringDate) {
   } 
 }
 
-export { getDayOfWeek, getDateFromString };
+function formatDateMonth(string){
+  const [year, month, day] = string.split("-");
+  return `${day}/${month}`
+} 
+
+
+export { getDayOfWeek, getDateFromString , formatDateMonth};

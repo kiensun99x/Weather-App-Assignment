@@ -5,7 +5,7 @@ export default function DetailSection({title, children}){
                 <h2>{title}</h2>
             </div>
             <hr />
-            <div className="w-full">
+            <div className="">
                 {children}
             </div>
         </div>

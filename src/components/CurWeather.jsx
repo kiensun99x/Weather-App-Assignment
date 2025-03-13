@@ -17,7 +17,7 @@ export default function CurWeather({WeatherData}){
     const currentData = WeatherData?.current || defaultData.current;
     
     return(
-        <div className="bg-[url('./assets/clear.png')] pt-26 pb-10 w-100% bg-cover bg-center">
+        <div id="cur-weather" className="bg-[url('./assets/clear.png')] pt-26 pb-10 w-100% bg-cover bg-center">
             <div className="max-w-2xl min-h-100 mx-10 md:mx-auto bg-black/20 rounded-2xl">
                 <div className="flex flex-col sm:flex-row  opacity-100 text-white">
                     <div className="p-8 flex-1  flex flex-col justify-center items-center gap-1 text-center">

@@ -1,4 +1,4 @@
-import { getDateFromString } from "../../utils/getDayOfWeek";
+import { getDateFromString } from "../../utils/formatDate";
 import DailyDetailItem from "./DailyDetailItem";
 
 export default function DailyDetail({forecastData}) {

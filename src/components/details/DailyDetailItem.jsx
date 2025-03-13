@@ -1,10 +1,9 @@
-import { getDateFromString, getDayOfWeek } from "../../utils/getDayOfWeek"
+import { formatDateMonth, getDateFromString, getDayOfWeek } from "../../utils/formatDate"
 
 export default function DailyDetailItem({item}){
     const dayData = item.day;
+    const formattedDate = formatDateMonth(item.date);
     const date = getDateFromString(item.date)
-    const [year, month, day] = item.date.split("-");
-    const formattedDate = `${day}/${month}`;
     const weekDay = getDayOfWeek(date);
     return(
         <div className="flex p-3 border-t items-center">
