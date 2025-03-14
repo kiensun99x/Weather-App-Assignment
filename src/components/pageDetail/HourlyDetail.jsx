@@ -1,7 +1,6 @@
 import convertWindDirection from "../../utils/convertWindDir";
 
 export default function HourlyPageDetail({ data }) {
-    
   return (
     <div className="flex flex-col gap-2 mb-5">
       <h1 className="text-xl font-bold ">{data.time.slice(-5)}</h1>

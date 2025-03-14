@@ -10,6 +10,7 @@ import AirQuality from "./details/AirQuality";
 export default function Body({WeatherData}) {
   const todayData = WeatherData?.forecast.forecastday[0];
   const forecastData = WeatherData?.forecast?.forecastday?.slice(1) || [];
+  
   return (
     <div id="body" className="bg-gray-200 pt-4 pb-10">
       <div className="max-w-5xl mx-4 lg:mx-auto flex flex-col md:flex-row ">
@@ -21,7 +22,7 @@ export default function Body({WeatherData}) {
             <DailyDetail forecastData={forecastData}/>
           </DetailSection>
           <DetailSection title={'Nhiệt độ và khả năng có mưa trong ngày'}>
-            <LineChart data={todayData.hour}/>
+            <LineChart data={todayData? todayData.hour : null}/>
           </DetailSection>
           <DetailSection title={"Lượng mưa những ngày tới"}>
             <BarChart data={forecastData}/>

@@ -10,8 +10,8 @@ export default function Tomorrow() {
   if (WeatherData) {
     const todayData = WeatherData.forecast.forecastday[1];
     const fiteredData = filterFutureHours(todayData.hour);
-    const firstHalf = todayData.hour.slice(0, 12);     // Mảng đầu tiên
-    const secondHalf = todayData.hour.slice(12); 
+    const firstHalf = arr.slice(0, middle);     // Mảng đầu tiên
+    const secondHalf = arr.slice(middle); 
     return (
       <div id="hourly-page" className="bg-gray-200 min-h-screen py-28 ">
         <div id="page-container" className="max-w-5xl mx-auto">
@@ -23,12 +23,8 @@ export default function Tomorrow() {
             </div>
           </DetailSection>
           <DetailSection title={'Nhiệt độ và khả năng có mưa ngày mai'}>
-            <LineChart data={firstHalf}/>
-            <LineChart data={secondHalf}/>
-            
+            <LineChart data={todayData}/>
           </DetailSection>
-
-
         </div>
       </div>
     );

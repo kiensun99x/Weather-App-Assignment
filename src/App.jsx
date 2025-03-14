@@ -10,6 +10,7 @@ import Layout from "./pages/Layout.jsx";
 import Home from "./pages/Home.jsx";
 import Hourly from "./pages/Hourly.jsx";
 import Tomorrow from "./pages/Tomorrow.jsx";
+import ThreeDays from "./pages/ThreeDays.jsx";
 
 function App() {
   const [city, setCity] = useState('Ha Noi');
@@ -31,6 +32,7 @@ function App() {
             <Route index element={<Home />}/>
             <Route path="/hourly" element={<Hourly />}/>
             <Route path="/tomorrow" element={<Tomorrow />}/>
+            <Route path="/3days" element={<ThreeDays />}/>
           </Route>
         </Routes>
       </BrowserRouter>

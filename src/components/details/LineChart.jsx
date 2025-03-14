@@ -17,6 +17,8 @@ ChartJS.register(
   ChartDataLabels
 );
 export default function LineChart({ data }) {
+  console.log(data);
+  
   if (data) {
     const filteredData = filterFutureHours(data);
     const labels = filteredData.map((item) => item.time.slice(-5));
