@@ -1,15 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Header({ setCity }) {
+  const navigate = useNavigate();
   return (
     <nav
       id="header"
       className="fixed z-10 top-0 w-full bg-white/70 backdrop-blur-md shadow-md"
     >
-      <div className="flex items-center justify-between px-6 pt-3">
+      <div className="flex items-center justify-between px-10 xs:px-6 pt-3">
         {/* Logo */}
         <div
-          className="text-xl font-bold text-blue-600 hover:cursor-pointer"
+          className="text-xl font-bold text-blue-600 hover:cursor-pointer max-xs:hidden"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <i className="max-sm:hidden">🌤️</i>
@@ -19,13 +20,14 @@ export default function Header({ setCity }) {
         {/* Input tìm kiếm */}
         <input
           type="text"
-          placeholder="Tìm kiếm địa điểm..."
-          className="w-64 px-4 py-2 border border-blue-500 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400"
+          placeholder="Tìm kiếm thành phố..."
+          className="w-64 px-4 py-2 max-xs:flex-1 border border-blue-500 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400"
           onKeyDown={(event) => {
             if (event.key === "Enter") {
               if (event.target.value) {
                 setCity(event.target.value);
                 console.log("enter");
+                navigate('/', { replace: true })
               }
             }
           }}
