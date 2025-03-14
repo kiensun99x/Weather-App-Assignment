@@ -7,24 +7,24 @@ export default function AirQuality({data}) {
     return(
         <div id="air-quality" className="p-5">
             <div className="flex justify-between">
-                <span>CO</span>  <span>{airData.co}μg/m<sup>3</sup></span>
+                <span>CO</span>  <span>{airData.co}<span className="font-light italic"> μg/m</span><sup>3</sup></span>
             </div>
             <div className="flex justify-between">
-                <span>NO<sub>2</sub></span>  <span>{airData.no2}μg/m<sup>3</sup></span>
+                <span>NO<sub>2</sub></span>  <span>{airData.no2}<span className="font-light italic"> μg/m</span><sup>3</sup></span>
             </div>
             <div className="flex justify-between">
-                <span>O<sub>3</sub></span>  <span>{airData.o3}μg/m<sup>3</sup></span>
+                <span>O<sub>3</sub></span>  <span>{airData.o3}<span className="font-light italic"> μg/m</span><sup>3</sup></span>
             </div>
             <div className="flex justify-between">
-                <span>SO<sub>2</sub>   </span><span>{airData.so2}μg/m<sup>3</sup></span>
+                <span>SO<sub>2</sub>   </span><span>{airData.so2}<span className="font-light italic"> μg/m</span><sup>3</sup></span>
             </div>
             <div className="flex justify-between">
-                <span>PM2.5</span>  <span>{airData.pm2_5}μg/m<sup>3</sup></span>
+                <span>PM2.5</span>  <span>{airData.pm2_5}<span className="font-light italic"> μg/m</span><sup>3</sup></span>
             </div>
             <div className="flex justify-between">
-                <span>PM10</span>  <span>{airData.pm10}μg/m<sup>3</sup></span>
+                <span>PM10</span>  <span>{airData.pm10}<span className="font-light italic"> μg/m</span><sup>3</sup></span>
             </div>
-            <hr />
+            <hr className="my-2"/>
             <h1 className={colors[airData['us-epa-index']-1]+ ' text-xl font-bold '}>{labels[airData['us-epa-index']-1]}</h1>
         </div>
     )}
