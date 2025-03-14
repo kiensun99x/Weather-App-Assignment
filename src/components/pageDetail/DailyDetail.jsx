@@ -17,7 +17,7 @@ export default function DailyPageDetail({ data }) {
           </div>
         </div>
 
-        <span className="text-lg">{data.day.condition.text}</span>
+        <span className="text-lg font-semibold">{data.day.condition.text}</span>
       </div>
       <div className="flex flex-col xs:flex-row gap-5">
         <div className="flex flex-1 flex-col gap-2">

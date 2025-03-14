@@ -11,6 +11,9 @@ import Home from "./pages/Home.jsx";
 import Hourly from "./pages/Hourly.jsx";
 import Tomorrow from "./pages/Tomorrow.jsx";
 import ThreeDays from "./pages/ThreeDays.jsx";
+import FiveDays from "./pages/FiveDays.jsx";
+import SevenDays from "./pages/SevenDays.jsx";
+import TwoWeeks from "./pages/TwoWeeks.jsx";
 
 function App() {
   const [city, setCity] = useState('Ha Noi');
@@ -33,6 +36,9 @@ function App() {
             <Route path="/hourly" element={<Hourly />}/>
             <Route path="/tomorrow" element={<Tomorrow />}/>
             <Route path="/3days" element={<ThreeDays />}/>
+            <Route path="/5days" element={<FiveDays />}/>
+            <Route path="/7days" element={<SevenDays />}/>
+            <Route path="/14days" element={<TwoWeeks />}/>
           </Route>
         </Routes>
       </BrowserRouter>

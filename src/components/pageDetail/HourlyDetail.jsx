@@ -10,7 +10,7 @@ export default function HourlyPageDetail({ data }) {
           <span className="text-3xl font-semibold">{data.temp_c}°C</span>
         </div>
 
-        <span className="text-lg">{data.condition.text}</span>
+        <span className="text-lg font-semibold">{data.condition.text}</span>
       </div>
       <div className="flex flex-col xs:flex-row gap-5">
         <div className="flex flex-1 flex-col gap-2">
