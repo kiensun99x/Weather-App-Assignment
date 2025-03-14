@@ -31,6 +31,12 @@ import { formatDateMonth } from "../../utils/formatDate";
             options={{
               responsive: true, // Tự động co giãn theo thẻ cha
               maintainAspectRatio: false, // Không giữ tỷ lệ khung hình mặc định
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  suggestedMax: Math.max(...precip) + 5, // Tăng khoảng trên
+                },
+              },
               plugins: {
                 legend: {
                   display: true, // Hiển thị chú thích

@@ -30,6 +30,12 @@ export default function LineChart({ data }) {
           options={{
             responsive: true, // Tự động co giãn theo thẻ cha
             maintainAspectRatio: false, // Không giữ tỷ lệ khung hình mặc định
+            scales: {
+                y: {
+                  beginAtZero: true,
+                  suggestedMax: Math.max(...temps, ...rainChances) + 5, // Tăng khoảng trên
+                },
+              },
             plugins: {
               legend: {
                 display: true, // Hiển thị chú thích
@@ -68,7 +74,7 @@ export default function LineChart({ data }) {
                 data: rainChances,
                 borderColor: "blue",
                 backgroundColor: "rgba(54, 162, 235, 0.5)",
-                tension: 0.4,
+                // tension: 0.4,
                 datalabels:{
                     formatter: (value) => `${value}%`, // Hiển thị nhiệt độ
                 }

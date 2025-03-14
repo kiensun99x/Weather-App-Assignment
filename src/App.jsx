@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import "leaflet/dist/leaflet.css";
 import Header from "./components/Header.jsx";
 import CurWeather from "./components/CurWeather.jsx";
 import Body from "./components/Body.jsx";

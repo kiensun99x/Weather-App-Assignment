@@ -1,6 +1,6 @@
 export default function Header({ setCity }) {
   return (
-    <nav id="header" className="fixed top-0 w-full bg-white/70 backdrop-blur-md shadow-md px-6 py-3 flex items-center justify-between">
+    <nav id="header" className="fixed z-10 top-0 w-full bg-white/70 backdrop-blur-md shadow-md px-6 py-3 flex items-center justify-between">
       {/* Logo */}
       <div
         className="text-xl  font-bold text-blue-600 hover:cursor-pointer"
