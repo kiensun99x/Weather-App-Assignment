@@ -18,7 +18,7 @@ ChartJS.register(
 );
 export default function LineChart({ data }) {
   if (data) {
-    const filteredData = filterFutureHours(data.hour);
+    const filteredData = filterFutureHours(data);
     const labels = filteredData.map((item) => item.time.slice(-5));
     const temps = filteredData.map((item) => item.temp_c);
     const rainChances = filteredData.map((item) => item.chance_of_rain);

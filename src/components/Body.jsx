@@ -21,7 +21,7 @@ export default function Body({WeatherData}) {
             <DailyDetail forecastData={forecastData}/>
           </DetailSection>
           <DetailSection title={'Nhiệt độ và khả năng có mưa trong ngày'}>
-            <LineChart data={todayData}/>
+            <LineChart data={todayData.hour}/>
           </DetailSection>
           <DetailSection title={"Lượng mưa những ngày tới"}>
             <BarChart data={forecastData}/>

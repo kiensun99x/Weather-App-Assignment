@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import Layout from "./pages/Layout.jsx";
 import Home from "./pages/Home.jsx";
 import Hourly from "./pages/Hourly.jsx";
+import Tomorrow from "./pages/Tomorrow.jsx";
 
 function App() {
   const [city, setCity] = useState('Ha Noi');
@@ -29,6 +30,7 @@ function App() {
           <Route path="/" element={<Layout setCity={setCity} WeatherData={WeatherData}/>}>
             <Route index element={<Home />}/>
             <Route path="/hourly" element={<Hourly />}/>
+            <Route path="/tomorrow" element={<Tomorrow />}/>
           </Route>
         </Routes>
       </BrowserRouter>
