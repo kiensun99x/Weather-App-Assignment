@@ -5,6 +5,9 @@ import Header from "./components/Header.jsx";
 import CurWeather from "./components/CurWeather.jsx";
 import Body from "./components/Body.jsx";
 import fetchCurWeather from "./services/fetchCurWeather.jsx";
+import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import Layout from "./pages/Layout.jsx";
+import Home from "./pages/Home.jsx";
 
 function App() {
   const [city, setCity] = useState('Ha Noi');
@@ -20,10 +23,13 @@ function App() {
   
   return (
     <>
-      <Header setCity={setCity} />
-      <CurWeather WeatherData={WeatherData}/>
-      <Body WeatherData={WeatherData}/>
-
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout setCity={setCity} WeatherData={WeatherData}/>}>
+            <Route index element={<Home />}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
 
     </>
   );
