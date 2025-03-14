@@ -8,6 +8,7 @@ import fetchCurWeather from "./services/fetchCurWeather.jsx";
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import Layout from "./pages/Layout.jsx";
 import Home from "./pages/Home.jsx";
+import Hourly from "./pages/Hourly.jsx";
 
 function App() {
   const [city, setCity] = useState('Ha Noi');
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout setCity={setCity} WeatherData={WeatherData}/>}>
             <Route index element={<Home />}/>
+            <Route path="/hourly" element={<Hourly />}/>
           </Route>
         </Routes>
       </BrowserRouter>

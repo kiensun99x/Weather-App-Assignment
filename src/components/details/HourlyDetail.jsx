@@ -13,8 +13,8 @@ export default function HourlyDetail({todayData}) {
   ];
     let filteredTodayData 
     if (todayData) {
-      
       filteredTodayData= filterFutureHours(todayData.hour)
+      
     }
     
     const hourData = filteredTodayData || defaultData;
