@@ -5,6 +5,7 @@ import LineChart from "./details/LineChart";
 import BarChart from "./details/BarChart";
 import SunStatus from "./details/SunStatus";
 import WeatherMap from "./details/WeatherMap";
+import AirQuality from "./details/AirQuality";
 
 export default function Body({WeatherData}) {
   const todayData = WeatherData?.forecast.forecastday[0];
@@ -27,6 +28,9 @@ export default function Body({WeatherData}) {
           </DetailSection>
         </div>
         <div className="min-w-80  ">
+          <DetailSection title={'Chất lượng không khí'}>
+            <AirQuality data={WeatherData}/>  
+          </DetailSection>
           <DetailSection title={'Bình minh/Hoàng hôn'}>
             <SunStatus data={todayData}/>
           </DetailSection>
