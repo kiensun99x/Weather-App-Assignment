@@ -21,7 +21,7 @@ export default function Hourly() {
             </div>
           </DetailSection>
           <DetailSection title={'Nhiệt độ và khả năng có mưa trong ngày'}>
-            <LineChart data={todayData.hour}/>
+            <LineChart data={fiteredData}/>
           </DetailSection>
         </div>
       </div>

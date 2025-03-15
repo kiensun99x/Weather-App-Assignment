@@ -17,8 +17,6 @@ export default function CurWeather({WeatherData}){
     
     const location = WeatherData?.location || defaultData.location;
     const currentData = WeatherData?.current || defaultData.current;
-    console.log(currentData.condition.code);
-    
     
     return(
         <div id="cur-weather" className=" pt-34 pb-10 w-100% bg-cover bg-center"

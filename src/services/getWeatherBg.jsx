@@ -1,5 +1,4 @@
 export default function getWeatherBackground(weatherCode, isDay) {
-    console.log(isDay);
     
     const backgroundMap = {
         1000: isDay?"sunny.jpg": 'clear_night.jpg',        // Trời nắng
