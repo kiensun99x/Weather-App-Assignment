@@ -1,3 +1,5 @@
+import getWeatherBackground from "../services/getWeatherBg";
+
 export default function CurWeather({WeatherData}){
     const defaultData = {
         location: { name: "--", country: "" },
@@ -15,9 +17,13 @@ export default function CurWeather({WeatherData}){
     
     const location = WeatherData?.location || defaultData.location;
     const currentData = WeatherData?.current || defaultData.current;
+    console.log(currentData.condition.code);
+    
     
     return(
-        <div id="cur-weather" className="bg-[url('./assets/clear.png')] pt-34 pb-10 w-100% bg-cover bg-center">
+        <div id="cur-weather" className=" pt-34 pb-10 w-100% bg-cover bg-center"
+            style={{ backgroundImage: `url(${getWeatherBackground(currentData.condition.code, currentData.is_day)})` }}
+        >
             <div className="max-w-2xl min-h-100 mx-10 md:mx-auto bg-black/20 rounded-2xl">
                 <div className="flex flex-col sm:flex-row  opacity-100 text-white">
                     <div className="p-8 flex-1  flex flex-col justify-center items-center gap-1 text-center">
