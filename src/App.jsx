@@ -18,12 +18,15 @@ import TwoWeeks from "./pages/TwoWeeks.jsx";
 function App() {
   const [city, setCity] = useState('Ha Noi');
   const [WeatherData, setWeatherData] = useState(null);
+  const [loading, setLoading] = useState(false);
  
   useEffect(() => {
+    setLoading(true);
     fetchCurWeather(city).then((data) => {
       if (data) 
         if(!data.error)
         setWeatherData(data);
+        setLoading(false)
     });
   }, [city]);
   
@@ -31,7 +34,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout setCity={setCity} WeatherData={WeatherData}/>}>
+          <Route path="/" element={<Layout setCity={setCity} WeatherData={WeatherData} loading={loading}/>}>
             <Route index element={<Home />}/>
             <Route path="/hourly" element={<Hourly />}/>
             <Route path="/tomorrow" element={<Tomorrow />}/>

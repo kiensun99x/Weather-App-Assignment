@@ -1,13 +1,13 @@
 import { NavLink, useNavigate } from "react-router-dom";
 
-export default function Header({ setCity }) {
+export default function Header({ setCity , loading}) {
   const navigate = useNavigate();
   return (
     <nav
       id="header"
       className="fixed z-10 top-0 w-full bg-white/70 backdrop-blur-md shadow-md"
     >
-      <div className="flex items-center justify-between px-10 xs:px-6 pt-3">
+      <div className="flex items-center justify-between px-6 xs:px-6 pt-3">
         {/* Logo */}
         <div
           className="text-xl font-bold text-blue-600 hover:cursor-pointer max-xs:hidden"
@@ -17,21 +17,28 @@ export default function Header({ setCity }) {
           WeatherMe
         </div>
 
-        {/* Input tìm kiếm */}
-        <input
-          type="text"
-          placeholder="Tìm kiếm thành phố..."
-          className="w-64 px-4 py-2 max-xs:flex-1 border border-blue-500 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400"
-          onKeyDown={(event) => {
-            if (event.key === "Enter") {
-              if (event.target.value) {
-                setCity(event.target.value);
-                console.log("enter");
-                navigate('/', { replace: true })
+        {/* Input tìm kiếm và loading spin*/}
+        <div className="flex max-xs:flex-1 xs:flex-row-reverse">
+
+          <input
+            type="text"
+            placeholder="Tìm kiếm thành phố..."
+            className="w-60 px-4 py-2 mx-2 max-xs:flex-1 border border-blue-500 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400"
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                if (event.target.value) {
+                  setCity(event.target.value);
+                  console.log("enter");
+                  navigate('/', { replace: true })
+                }
               }
-            }
-          }}
-        />
+            }}
+          />
+          {/* loading spiner */}
+          <div className={`flex justify-center items-center  ${loading? 'visible': 'invisible'}`}>
+            <div className="w-8 h-8 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+          </div>
+        </div>
       </div>
       {/* Dải Navbar */}
       <div className="mt-2 flex justify-around max-[689px]:overflow-x-scroll space-x-4 text-sm font-semibold text-gray-700">
