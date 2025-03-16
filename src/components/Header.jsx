@@ -30,6 +30,8 @@ export default function Header({ setCity , loading}) {
                   setCity(event.target.value);
                   console.log("enter");
                   navigate('/', { replace: true })
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+
                 }
               }
             }}
@@ -63,6 +65,8 @@ export default function Header({ setCity , loading}) {
             onClick={() => {
               // Nếu đang ở trang này, cuộn lên đầu trang
               if (window.location.pathname === item.path) {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }
             }}

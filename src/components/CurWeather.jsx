@@ -22,7 +22,7 @@ export default function CurWeather({WeatherData}){
         <div id="cur-weather" className=" pt-34 pb-10 w-100% bg-cover bg-center"
             style={{ backgroundImage: `url(${getWeatherBackground(currentData.condition.code, currentData.is_day)})` }}
         >
-            <div className="max-w-2xl min-h-100 mx-10 md:mx-auto bg-black/20 rounded-2xl">
+            <div className="max-w-2xl min-h-100 mx-10 md:mx-auto bg-black/30 rounded-2xl">
                 <div className="flex flex-col sm:flex-row  opacity-100 text-white">
                     <div className="p-8 flex-1  flex flex-col justify-center items-center gap-1 text-center">
                         <h1 className="text-5xl sm:text-6xl ">{location.name}</h1>
