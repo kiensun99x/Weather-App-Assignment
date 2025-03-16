@@ -3,19 +3,22 @@ import { useOutletContext } from "react-router-dom";
  import HourlyPageDetail from "../components/pageDetail/HourlyDetail";
  import filterFutureHours from "../utils/filterFutureHours";
  import LineChart from "../components/details/LineChart";
+import convertTzidToUtc from "../utils/convertTzidToUtc";
  
  export default function Tomorrow() {
    const outletContext = useOutletContext();
    const WeatherData = outletContext.WeatherData;
    if (WeatherData) {
      const todayData = WeatherData.forecast.forecastday[1];
+         const location= `(${WeatherData.location.name}/${convertTzidToUtc(WeatherData.location.tz_id) })`
+     
      const fiteredData = filterFutureHours(todayData.hour);
      const firstHalf = todayData.hour.slice(0, 12);     // Mảng đầu tiên
      const secondHalf = todayData.hour.slice(12); 
      return (
        <div id="hourly-page" className="bg-gray-200 min-h-screen py-28 ">
          <div id="page-container" className="max-w-5xl mx-auto">
-           <DetailSection title={"Dự báo ngày mai"}>
+           <DetailSection title={"Dự báo ngày mai" + location}>
              <div className="flex flex-col p-4">
                {fiteredData.map((item, index) => 
                  <HourlyPageDetail key={index} data={item}/>
