@@ -6,7 +6,7 @@ export default function DailyDetailItem({item}){
     const date = getDateFromString(item.date)
     const weekDay = getDayOfWeek(date);
     return(
-        <div className="flex p-3 border-t items-center">
+        <div className="flex p-3 border-t items-center justify-around">
             <div className="flex flex-col sm:px-1">
                 <span className="font-bold text-md">{weekDay}</span>
                 <span className="text-sm">{formattedDate}</span>
@@ -18,7 +18,7 @@ export default function DailyDetailItem({item}){
 
             </div>
             
-            <span className="flex-1 px-5">{dayData.condition.text}</span>
+            <span className="flex-1 px-5 max-[385px]:hidden">{dayData.condition.text}</span>
             <img className="w-[18px] " src="https://www.awxcdn.com/adc-assets/images/components/weather/hourly-card-nfl/drop-icon.svg" alt="" />
             <span>{dayData.avghumidity}%</span>
         </div>
